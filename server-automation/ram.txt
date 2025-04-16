@@ -1,0 +1,8 @@
+nano ~/scripts/monitor_ram.sh
+
+
+while true; do
+    mem_usage=$(free -m | awk '/Mem/{print $3}')
+    echo "$(date '+%F %T') - $mem_usage MB used" >> ~/logs/memory_log.txt
+    sleep 60
+done

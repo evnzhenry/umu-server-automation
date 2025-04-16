@@ -1,0 +1,12 @@
+nano ~/backup/backup_script.sh
+
+backup_dir="student_records_backup_$(date +%F_%H-%M)"
+mkdir -p "/backup/$backup_dir"
+
+cp -r /path/to/Student_Records "/backup/$backup_dir"
+
+tar -czf "/backup/${backup_dir}.tar.gz" "/backup/$backup_dir"
+
+rm -rf "/backup/$backup_dir"
+
+echo "$(date '+%F %T') - Backup completed: ${backup_dir}.tar.gz" >> ~/logs/backup_log.txt

@@ -1,0 +1,12 @@
+nano ~/scripts/logout_users.sh
+
+wall "SYSTEM ALERT: Scheduled logout in 15 minutes. Save your work!"
+
+
+sleep 900
+
+
+pkill -KILL -u evnz459
+
+
+echo "$(date '+%F %T') - All users logged out for maintenance" >> ~/logs/logout_log.txt
